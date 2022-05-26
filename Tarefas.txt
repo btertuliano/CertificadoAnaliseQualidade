@@ -1,0 +1,47 @@
+Funcionalidades pós entrega sistema
+- Definir permissão dos usuários (grupos)
+
+Lote para teste: 01459701
+
+Funcionalidades para entrega sistema
+- Verificar problema ao cadastrar um resultado, não esta trazendo de forma automática as descrições das abrasões.
+- Criar tela de cadastrar e editar reanálise
+
+- Desenvolver login acessando API TOTVS
+- Inserir botão de editar com funciondalide em todos os cadastros. (Falta enviar dados)
+- Adicionar fórmula para os campos de tipo especificação do cabeçalho (MÉDIA FINAL)
+ - DENSIDADE (000006): Média Densidade Resultado
+ - DUREZA (000001): Média dureza hora do resultado
+ - FLUIDEZ (000003): (VALOR * 200) {Média Índice de Fluidez (g/10 min) da Fluidez}
+ - UMIDADE (000007): Média umidade do resultado
+ - ABRASÃO (000005): (((MI – MF) * Fator fixo) / (Abrasividade * Densidade)) {Média da média do calculo abrasão}
+ - DENSIDADE APARENTE (000002): Média densidade aparente do resultado
+ - EXPANSÃO (000004): Média expansão do resultado
+
+Implantação
+- Configurar REST no servidor (10.0.1.100)
+  https://tdn.totvs.com/pages/viewpage.action?pageId=185747842
+  https://api.totvs.com.br/apidetails/Token_v1_000.json
+  http://10.0.1.43:8085/rest/index/TOKEN
+  http://10.0.1.43:8085/rest/api/oauth2/v1/token?grant_type=password&username=bruno.macedo&password=Henrique@2016
+
+Erro usuário
+{
+    "code": 401,
+    "message": "invalid_grant Falha de autentica��o para o usu�rio bruno..",
+    "detailedMessage": ""
+}
+
+Erro senha
+{
+    "code": 401,
+    "message": "invalid_grant Falha de autentica��o para o usu�rio bruno.macedo.",
+    "detailedMessage": ""
+}
+
+Grant_type errado
+{
+    "code": 400,
+    "message": "Par�metro de servi�o inv�lido.Tipo de grant_type inv�lido.",
+    "detailedMessage": ""
+}
